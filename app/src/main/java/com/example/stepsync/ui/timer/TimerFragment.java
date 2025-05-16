@@ -31,9 +31,6 @@ public class TimerFragment extends Fragment {
         binding = FragmentTimerBinding.inflate(inflater, container, false);
         viewModel = new ViewModelProvider(this).get(TimerViewModel.class);
 
-        final TextView textView = binding.textNotifications;
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
-
         viewModel.getElapsedSeconds().observe(getViewLifecycleOwner(), seconds -> {
             binding.textTimer.setText(formatTime(seconds));
         });
