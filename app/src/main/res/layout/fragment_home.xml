@@ -84,10 +84,11 @@
         app:layout_constraintVertical_bias="0.857" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/timer_circle"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:src="@drawable/shape_circle_limegreen"
+        android:background="@drawable/shape_circle_limegreen"
+        android:src="@drawable/timer"
         app:layout_constraintBottom_toBottomOf="@+id/overview_tab"
         app:layout_constraintEnd_toEndOf="@+id/overview_tab"
         app:layout_constraintHorizontal_bias="0.042"
@@ -96,7 +97,7 @@
         app:layout_constraintVertical_bias="0.12" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/fire_circle"
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginBottom="13dp"
@@ -109,10 +110,11 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/water_circle"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:src="@drawable/shape_circle_purple"
+        android:background="@drawable/shape_circle_white"
+        android:src="@drawable/water"
         app:layout_constraintBottom_toBottomOf="@+id/water_consumption_tab"
         app:layout_constraintEnd_toEndOf="@+id/water_consumption_tab"
         app:layout_constraintHorizontal_bias="0.042"
@@ -121,7 +123,7 @@
         app:layout_constraintVertical_bias="0.16" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/fire_icon"
         android:layout_width="48dp"
         android:layout_height="42dp"
         android:src="@drawable/ic_fire"
@@ -137,11 +139,51 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/shape_circle_purple"
+        android:background="@drawable/shape_circle_white"
+        android:contentDescription="Walking"
         android:padding="12dp"
+        android:src="@drawable/walking_svgrepo_com"
         app:layout_constraintEnd_toEndOf="@+id/workout_choice_tab"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="@+id/workout_choice_tab"
+        app:layout_constraintTop_toTopOf="@+id/workout_choice_tab"
+        tools:srcCompat="@drawable/walking_svgrepo_com" />
+
+    <ImageButton
+        android:id="@+id/running_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_circle_white"
+        android:contentDescription="Running"
+        android:src="@drawable/running_svgrepo_com"
+        app:layout_constraintEnd_toEndOf="@+id/workout_choice_tab"
+        app:layout_constraintHorizontal_bias="0.126"
+        app:layout_constraintStart_toEndOf="@+id/walking_button"
+        app:layout_constraintTop_toTopOf="@+id/workout_choice_tab" />
+
+    <ImageButton
+        android:id="@+id/cycle_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_circle_white"
+        android:src="@drawable/cycling_svgrepo_com"
+
+        app:layout_constraintStart_toEndOf="@+id/running_button"
+        app:layout_constraintTop_toTopOf="@+id/workout_choice_tab" />
+
+    <ImageButton
+        android:id="@+id/lifting_button"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/shape_circle_white"
+        android:src="@drawable/lifting"
+        app:layout_constraintEnd_toEndOf="@+id/workout_choice_tab"
+        app:layout_constraintHorizontal_bias="0.656"
+        app:layout_constraintStart_toEndOf="@+id/cycle_button"
         app:layout_constraintTop_toTopOf="@+id/workout_choice_tab" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
