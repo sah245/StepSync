@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class HomeViewModel extends ViewModel {
+
     private final MutableLiveData<Integer> waterAmount = new MutableLiveData<>(0);
 
     public LiveData<Integer> getWaterAmount() {
@@ -14,4 +15,6 @@ public class HomeViewModel extends ViewModel {
     public void addWater(int amount) {
         waterAmount.setValue(waterAmount.getValue() + amount);
     }
+
+
 }

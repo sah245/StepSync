@@ -18,13 +18,14 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
         HomeViewModel homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
         homeViewModel.getWaterAmount().observe(getViewLifecycleOwner(), value ->
-                binding.waterConsText.setText(value));
+                binding.waterConsText.setText(String.valueOf(value)));
 
         binding.add500mlButton.setOnClickListener(v -> homeViewModel.addWater(500));
         binding.add1000mlButton.setOnClickListener(v -> homeViewModel.addWater(1000));

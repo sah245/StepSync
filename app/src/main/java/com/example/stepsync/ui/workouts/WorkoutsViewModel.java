@@ -20,4 +20,5 @@ public class WorkoutsViewModel extends ViewModel {
             counter.setValue(counter.getValue() - 1);
         }
     }
+
 }

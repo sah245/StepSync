@@ -22,7 +22,6 @@ public class WorkoutsFragment extends Fragment {
 
         binding = FragmentWorkoutsBinding.inflate(inflater, container, false);
 
-
         workoutsViewModel.getCounter().observe(getViewLifecycleOwner(), value ->
                 binding.walkCountText.setText(String.valueOf(value)));
         workoutsViewModel.getCounter().observe(getViewLifecycleOwner(), value ->
