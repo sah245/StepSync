@@ -26,18 +26,7 @@
         android:layout_width="372dp"
         android:layout_height="148dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="144dp"
-        android:background="@drawable/rounded_rectangle"
-        android:padding="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/water_consumption_tab"
-        android:layout_width="372dp"
-        android:layout_height="148dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="356dp"
+        android:layout_marginTop="116dp"
         android:background="@drawable/rounded_rectangle"
         android:padding="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +37,18 @@
         android:layout_width="372dp"
         android:layout_height="120dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="560dp"
+        android:layout_marginTop="532dp"
+        android:background="@drawable/rounded_rectangle"
+        android:padding="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/water_consumption_tab"
+        android:layout_width="372dp"
+        android:layout_height="148dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="328dp"
         android:background="@drawable/rounded_rectangle"
         android:padding="16dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -113,8 +113,8 @@
         android:id="@+id/water_circle"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:background="@drawable/shape_circle_white"
-        android:src="@drawable/water"
+        android:background="@drawable/shape_circle_purple"
+        android:src="@drawable/water_white"
         app:layout_constraintBottom_toBottomOf="@+id/water_consumption_tab"
         app:layout_constraintEnd_toEndOf="@+id/water_consumption_tab"
         app:layout_constraintHorizontal_bias="0.042"
@@ -139,24 +139,24 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/shape_circle_white"
+        android:background="@drawable/shape_circle_purple"
         android:contentDescription="Walking"
         android:padding="12dp"
-        android:src="@drawable/walking_svgrepo_com"
+        android:src="@drawable/walking_white"
         app:layout_constraintEnd_toEndOf="@+id/workout_choice_tab"
         app:layout_constraintHorizontal_bias="0.071"
         app:layout_constraintStart_toStartOf="@+id/workout_choice_tab"
         app:layout_constraintTop_toTopOf="@+id/workout_choice_tab"
-        tools:srcCompat="@drawable/walking_svgrepo_com" />
+        tools:srcCompat="@drawable/walking_white" />
 
     <ImageButton
         android:id="@+id/running_button"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/shape_circle_white"
+        android:background="@drawable/shape_circle_purple"
         android:contentDescription="Running"
-        android:src="@drawable/running_svgrepo_com"
+        android:src="@drawable/running_white"
         app:layout_constraintEnd_toEndOf="@+id/workout_choice_tab"
         app:layout_constraintHorizontal_bias="0.126"
         app:layout_constraintStart_toEndOf="@+id/walking_button"
@@ -168,8 +168,9 @@
         android:layout_height="60dp"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/shape_circle_white"
-        android:src="@drawable/cycling_svgrepo_com"
+        android:background="@drawable/shape_circle_purple"
+        android:contentDescription="cycling"
+        android:src="@drawable/cycling_white"
 
         app:layout_constraintStart_toEndOf="@+id/running_button"
         app:layout_constraintTop_toTopOf="@+id/workout_choice_tab" />
@@ -179,11 +180,128 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/shape_circle_white"
-        android:src="@drawable/lifting"
+        android:background="@drawable/shape_circle_purple"
+        android:contentDescription="weightlifting"
+        android:src="@drawable/lifting_white"
         app:layout_constraintEnd_toEndOf="@+id/workout_choice_tab"
         app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toEndOf="@+id/cycle_button"
         app:layout_constraintTop_toTopOf="@+id/workout_choice_tab" />
+
+    <TextView
+        android:id="@+id/walk_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="35dp"
+        android:text="Walking"
+        android:textColor="#FFFF"
+        app:layout_constraintEnd_toStartOf="@+id/running_desc"
+        app:layout_constraintStart_toStartOf="@+id/workout_choice_tab"
+        app:layout_constraintTop_toBottomOf="@+id/walking_button" />
+
+    <TextView
+        android:id="@+id/running_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="44dp"
+        android:text="Running"
+        android:textColor="#FFFF"
+        app:layout_constraintEnd_toStartOf="@+id/cycle_desc"
+        app:layout_constraintTop_toBottomOf="@+id/running_button" />
+
+    <TextView
+        android:id="@+id/cycle_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:text="Cycling"
+        android:textColor="#FFFF"
+        app:layout_constraintEnd_toStartOf="@+id/lift_desc"
+        app:layout_constraintTop_toBottomOf="@+id/cycle_button" />
+
+    <TextView
+        android:id="@+id/lift_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="28dp"
+        android:text="Lifting"
+        android:textColor="#FFFF"
+        app:layout_constraintEnd_toEndOf="@+id/workout_choice_tab"
+        app:layout_constraintTop_toBottomOf="@+id/lifting_button" />
+
+    <TextView
+        android:id="@+id/ovr_time_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="0 Mins"
+        android:textColor="#FFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/overview_tab"
+        app:layout_constraintEnd_toEndOf="@+id/overview_tab"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/timer_circle"
+        app:layout_constraintTop_toTopOf="@+id/overview_tab"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <TextView
+        android:id="@+id/calorie_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="0 Cals"
+        android:textColor="#ffff"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/overview_tab"
+        app:layout_constraintEnd_toEndOf="@+id/overview_tab"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/fire_circle"
+        app:layout_constraintTop_toTopOf="@+id/overview_tab"
+        app:layout_constraintVertical_bias="0.797" />
+
+    <Button
+        android:id="@+id/add_500ml_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:backgroundTint="#c9c9c9"
+        android:text="+ 500 ml"
+        app:layout_constraintBottom_toBottomOf="@+id/water_consumption_tab"
+        app:layout_constraintStart_toStartOf="@+id/water_consumption_tab" />
+
+    <Button
+        android:id="@+id/add_1000ml_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="48dp"
+        android:backgroundTint="#c9c9c9"
+        android:text="+ 1,000 ml"
+        app:layout_constraintBottom_toBottomOf="@+id/water_consumption_tab"
+        app:layout_constraintEnd_toEndOf="@+id/water_consumption_tab" />
+
+    <TextView
+        android:id="@+id/water_cons_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="30dp"
+        android:text="0"
+        android:textColor="#ffff"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toStartOf="@+id/water_goal_text"
+        app:layout_constraintTop_toTopOf="@+id/water_consumption_tab" />
+
+    <TextView
+        android:id="@+id/water_goal_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:text="/ 2,500ml"
+        android:textColor="#ffff"
+        android:textSize="32sp"
+        app:layout_constraintEnd_toEndOf="@+id/water_consumption_tab"
+        app:layout_constraintTop_toTopOf="@+id/water_consumption_tab" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

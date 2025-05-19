@@ -22,9 +22,15 @@ public class HomeFragment extends Fragment {
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
 
-        return root;
+        homeViewModel.getWaterAmount().observe(getViewLifecycleOwner(), value ->
+                binding.waterConsText.setText(value));
+
+        binding.add500mlButton.setOnClickListener(v -> homeViewModel.addWater(500));
+        binding.add1000mlButton.setOnClickListener(v -> homeViewModel.addWater(1000));
+
+
+        return binding.getRoot();
     }
 
     @Override

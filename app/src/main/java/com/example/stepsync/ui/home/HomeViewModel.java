@@ -5,15 +5,13 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class HomeViewModel extends ViewModel {
+    private final MutableLiveData<Integer> waterAmount = new MutableLiveData<>(0);
 
-    private final MutableLiveData<String> mText;
-
-    public HomeViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+    public LiveData<Integer> getWaterAmount() {
+        return waterAmount;
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void addWater(int amount) {
+        waterAmount.setValue(waterAmount.getValue() + amount);
     }
 }

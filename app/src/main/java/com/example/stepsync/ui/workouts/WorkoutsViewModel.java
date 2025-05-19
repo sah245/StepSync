@@ -6,14 +6,18 @@ import androidx.lifecycle.ViewModel;
 
 public class WorkoutsViewModel extends ViewModel {
 
-    private final MutableLiveData<String> mText;
-
-    public WorkoutsViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is workouts fragment");
+    private final MutableLiveData<Integer> counter = new MutableLiveData<>(0);
+    public LiveData<Integer> getCounter() {
+        return counter;
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void increment() {
+        counter.setValue(counter.getValue() + 1);
+    }
+
+    public void decrement() {
+        if (counter.getValue() > 0) {
+            counter.setValue(counter.getValue() - 1);
+        }
     }
 }
