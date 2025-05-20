@@ -277,4 +277,59 @@
         app:layout_constraintTop_toTopOf="@+id/walking_tab"
         app:layout_constraintVertical_bias="0.916" />
 
+    <ImageView
+        android:id="@+id/walking_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_circle_purple"
+        android:contentDescription="Walking"
+        android:padding="12dp"
+        android:src="@drawable/walking_white"
+        app:layout_constraintEnd_toEndOf="@+id/walking_tab"
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toStartOf="@+id/walking_tab"
+        app:layout_constraintTop_toTopOf="@+id/walking_tab"
+        tools:srcCompat="@drawable/walking_white" />
+
+    <ImageView
+        android:id="@+id/running_icon"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_circle_purple"
+        android:contentDescription="Running"
+        android:src="@drawable/running_white"
+        app:layout_constraintEnd_toEndOf="@+id/running_tab"
+        app:layout_constraintHorizontal_bias="0.042"
+        app:layout_constraintStart_toStartOf="@+id/running_tab"
+        app:layout_constraintTop_toTopOf="@+id/running_tab" />
+
+    <ImageView
+        android:id="@+id/cycle_button"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_circle_purple"
+        android:contentDescription="cycling"
+
+        android:src="@drawable/cycling_white"
+        app:layout_constraintEnd_toEndOf="@+id/cycling_tab"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="@+id/cycling_tab"
+        app:layout_constraintTop_toTopOf="@+id/cycling_tab" />
+
+    <ImageView
+        android:id="@+id/lifting_button"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/shape_circle_purple"
+        android:contentDescription="weightlifting"
+        android:src="@drawable/lifting_white"
+        app:layout_constraintEnd_toEndOf="@+id/lifting_tab"
+        app:layout_constraintHorizontal_bias="0.04"
+        app:layout_constraintStart_toStartOf="@+id/lifting_tab"
+        app:layout_constraintTop_toTopOf="@+id/lifting_tab" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
