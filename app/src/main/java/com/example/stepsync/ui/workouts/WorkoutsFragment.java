@@ -22,23 +22,32 @@ public class WorkoutsFragment extends Fragment {
 
         binding = FragmentWorkoutsBinding.inflate(inflater, container, false);
 
-        workoutsViewModel.getCounter().observe(getViewLifecycleOwner(), value ->
+        workoutsViewModel.getWalkCounter().observe(getViewLifecycleOwner(), value ->
                 binding.walkCountText.setText(String.valueOf(value)));
-        workoutsViewModel.getCounter().observe(getViewLifecycleOwner(), value ->
+
+        workoutsViewModel.getRunCounter().observe(getViewLifecycleOwner(), value ->
                 binding.runCountText.setText(String.valueOf(value)));
-        workoutsViewModel.getCounter().observe(getViewLifecycleOwner(), value ->
+
+        workoutsViewModel.getCycleCounter().observe(getViewLifecycleOwner(), value ->
                 binding.cyclingCountText.setText(String.valueOf(value)));
-        workoutsViewModel.getCounter().observe(getViewLifecycleOwner(), value ->
+
+        workoutsViewModel.getLiftCounter().observe(getViewLifecycleOwner(), value ->
                 binding.liftCountText.setText(String.valueOf(value)));
 
-        binding.walkIncrement.setOnClickListener(v -> workoutsViewModel.increment());
-        binding.walkDecrement.setOnClickListener(v -> workoutsViewModel.decrement());
-        binding.runIncrement.setOnClickListener(v -> workoutsViewModel.increment());
-        binding.runDecrement.setOnClickListener(v -> workoutsViewModel.decrement());
-        binding.cycleIncrement.setOnClickListener(v -> workoutsViewModel.increment());
-        binding.cycleDecrement.setOnClickListener(v -> workoutsViewModel.decrement());
-        binding.liftingIncrement.setOnClickListener(v -> workoutsViewModel.increment());
-        binding.liftingDecrement.setOnClickListener(v -> workoutsViewModel.decrement());
+        binding.walkIncrement.setOnClickListener(v -> workoutsViewModel.walkincrement());
+        binding.walkDecrement.setOnClickListener(v -> workoutsViewModel.walkdecrement());
+
+
+        binding.runIncrement.setOnClickListener(v -> workoutsViewModel.runincrement());
+        binding.runDecrement.setOnClickListener(v -> workoutsViewModel.rundecrement());
+
+
+        binding.cycleIncrement.setOnClickListener(v -> workoutsViewModel.cycleincrement());
+        binding.cycleDecrement.setOnClickListener(v -> workoutsViewModel.cycledecrement());
+
+
+        binding.liftingIncrement.setOnClickListener(v -> workoutsViewModel.liftincrement());
+        binding.liftingDecrement.setOnClickListener(v -> workoutsViewModel.liftdecrement());
 
         return binding.getRoot();
     }
